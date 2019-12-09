@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	class LevelBinder
+	public class LevelBinder
 	{
 		public List<int[,]> AllLevels { get; set; }
 		public int Level { get; set; } = 0;

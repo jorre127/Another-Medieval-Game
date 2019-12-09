@@ -27,7 +27,7 @@ namespace _710_InLes
 		public void Update(GameTime gameTime)
 		{
 			nextLevel.nextLevelUpdate();
-			gravity.Update();
+			gravity.Update(player);
 			player.Update(gameTime);
 			levelcollidy.Update();
 			currentLevel.Update(gameTime);

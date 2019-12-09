@@ -11,6 +11,7 @@ namespace _710_InLes
 	public class Player : ICollidable
 	{
 		private AnimationCreator aniCreator;
+		private Gravity gravity;
 
 		public bool collideRight, collideLeft, collideUp, collideDown;
 		private Texture2D texture, currentTexture;
@@ -19,11 +20,11 @@ namespace _710_InLes
 		public Animation animationLeft, animationRight, animationIdle, currentAnimation, animationSprintLeft, animationSprintRight, animationJump;
 		public Remote remote;
 		public Rectangle CollisionRectangleLeft, CollisionRectangleRight, CollisionRectangleUp, CollisionRectangleDown;
-		public Rectangle CollisionRectangle{get;set;}
+		public Rectangle CollisionRectangle { get; set; }
 		public int width, height;
 		float scale;
 
-		public Player(Vector2 _position, int width, int height, float scale, Texture2D texture, Remote keyBoard, Movement movement,AnimationCreator aniCreator)
+		public Player(Vector2 _position, int width, int height, float scale, Texture2D texture, Remote keyBoard, Movement movement, AnimationCreator aniCreator, Gravity gravity)
 		{
 			this.texture = texture;
 			this.currentTexture = texture;
@@ -33,6 +34,7 @@ namespace _710_InLes
 			this.height = height;
 			this.scale = scale;
 			this.aniCreator = aniCreator;
+			this.gravity = gravity;
 			CreateAnimationLeftRight();
 			Init(_position, keyBoard);
 		}
@@ -88,38 +90,38 @@ namespace _710_InLes
 		private void Jump()
 		{
 			movement.Jump(ref position);
-			if (movement.IsWallSliding)
-			{
-				if ((remote.left && collideRight) || (remote.right && collideLeft))
-				{
-					movement.IsWallSliding = false;
-					movement.WallJump(collideLeft, collideRight, movement.IsJumping, ref position);
-				}
-			}
 			currentAnimation = animationJump;
-
-			if (!remote.up)
-			{
-				movement.IsJumping = false;
-			}
 		}
 		private void DoNothing()
 		{
-				currentAnimation = animationIdle;
+			currentAnimation = animationIdle;
+		}
+		private void WallSlide()
+		{
+			movement.WallSliding(this, gravity);
+		}
+		private void WallJump()
+		{
+			movement.jumpheight = movement.originalJumpheight;
+			movement.WallJump(ref position);
 		}
 		private void MovementManager()
 		{
-			if (remote.left && !collideLeft && (!movement.IsWallSliding))
+			if (remote.left && !collideLeft)
 			{
 				MoveLeft();
 			}
-			if (remote.right && !collideRight && (!movement.IsWallSliding))
+			if (remote.right && !collideRight)
 			{
 				MoveRight();
 			}
 			if (!collideUp && remote.up)
 			{
 				Jump();
+			}
+			if ((remote.left && collideRight) || (remote.right && collideLeft))
+			{
+				WallJump();
 			}
 			if (!remote.up && !remote.left && !remote.right)
 			{
@@ -129,12 +131,16 @@ namespace _710_InLes
 			{
 				movement.jumpheight = 0;
 			}
+			if (!collideDown)
+			{
+				WallSlide();
+			}
 		}
 		public void Update(GameTime gameTime)
 		{
 			remote.Update();
 			MovementManager();
-			CollisionRectangle = new Rectangle((int)position.X-20, (int)position.Y, (int)(width * scale)+30, (int)(height * scale) + 30);
+			CollisionRectangle = new Rectangle((int)position.X - 20, (int)position.Y, (int)(width * scale) + 30, (int)(height * scale) + 35);
 			CollisionRectangleLeft = new Rectangle((int)position.X - 20, (int)position.Y, (int)((width / 2) * scale), (int)((height / 2) * scale));
 			CollisionRectangleRight = new Rectangle((int)position.X + (width / 2), (int)position.Y + 10, (int)((width / 2) + 30 * scale), (int)((height / 2) * scale));
 			CollisionRectangleUp = new Rectangle((int)position.X, (int)position.Y - 20, (int)(width * scale), (int)((height / 10) * scale));

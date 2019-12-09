@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	abstract class Tile
+	public abstract class Tile
 	{
 		protected Texture2D texture;
 		protected float scale;

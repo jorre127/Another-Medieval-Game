@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	class LavaSheet
+	public class LavaSheet
 	{
 		private Texture2D Texture;
 		private Vector2 InitialPosition;

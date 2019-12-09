@@ -6,51 +6,30 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	class Gravity
+	public class Gravity
 	{
-		private float originalgravityStrength, gravityStrength, changeInStrength, changeInJumpheight;
-		private CollisionManager collidy;
-		private Player player;
-		private Level level;
-		public Gravity(Player player, Level level, int gravity,CollisionManager collidy)
+		private float originalgravityStrength, changeInStrength, changeInJumpHeight;
+
+		public float gravityStrength { get; set; }
+		public Gravity(int gravity, float changeInStrength, float changeInJumpHeight)
 		{
 			this.originalgravityStrength = gravity;
 			this.gravityStrength = this.originalgravityStrength;
-			this.player = player;
-			this.changeInStrength = 0.3f;
-			this.changeInJumpheight = 0.7f;
-			this.level = level;
-			this.collidy = collidy;
+			this.changeInStrength = changeInStrength;
+			this.changeInJumpHeight = changeInJumpHeight;
 		}
-		public void Update()
+		public void Update(Player player)
 		{
 			if (!player.collideDown)
 			{
 				gravityStrength += changeInStrength;
-				player.movement.jumpheight -= changeInJumpheight;
+				player.movement.jumpheight -= changeInJumpHeight;
 				player.position.Y += gravityStrength;
 			}
 			else
 			{
-				player.movement.IsDoubleJump = false;
 				gravityStrength = originalgravityStrength;
 				player.movement.jumpheight = player.movement.originalJumpheight;
-				player.movement.movementSpeed = player.movement.originalmovementSpeed;
-			}
-			if (((player.collideLeft || player.collideRight)) && !player.collideDown && !player.movement.IsDoubleJump && (player.remote.left || player.remote.right))
-			{
-				gravityStrength = 2.5f;
-				player.movement.jumpheight = 0;
-				player.movement.IsWallSliding = true;
-				player.movement.IsDoubleJump = false;
-			}
-			if ((player.collideLeft || player.collideRight) && !player.collideDown)
-			{
-				player.movement.IsDoubleJump=false;
-			}
-			else
-			{
-				player.movement.IsWallSliding = false;
 			}
 		}
 	}

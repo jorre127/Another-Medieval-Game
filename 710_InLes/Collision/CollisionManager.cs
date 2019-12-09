@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-    class CollisionManager
+    public class CollisionManager
     {
 		public bool Update(Rectangle p1, Rectangle level)
 		{

@@ -52,11 +52,11 @@ namespace _710_InLes.Tutorial
 			((KeyBoard)remote).rightk = Keys.D;
 			((KeyBoard)remote).sprintk = Keys.LeftShift;
 
-			player = new Player(new Vector2(100, 800), 60, 52, scale, texture, remote, movement,aniCreator);
+			gravity = new Gravity(4,0.3f,0.7f);
+			player = new Player(new Vector2(100, 800), 60, 52, scale, texture, remote, movement, aniCreator, gravity);
 			lava = new LavaSheet(LavaTexture, new Vector2(-10, 1100), scale);
 			currentLevel = new Level(player, tileset, portalTexture, new Vector2(-10, -40), levelBinder, lava, scale);
 			levelcollidy = new LevelCollision(player, currentLevel, collidy);
-			gravity = new Gravity(player, currentLevel, 4, collidy);
 			gameOver = new GameOver(player, lava, collidy);
 			nextLevel = new NextLevel(player, currentLevel, collidy,stateChanger,graphicsDevice,content);
 
