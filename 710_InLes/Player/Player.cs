@@ -140,11 +140,13 @@ namespace _710_InLes
 		{
 			remote.Update();
 			MovementManager();
+
 			CollisionRectangle = new Rectangle((int)position.X - 20, (int)position.Y, (int)(width * scale) + 30, (int)(height * scale) + 35);
 			CollisionRectangleLeft = new Rectangle((int)position.X - 20, (int)position.Y, (int)((width / 2) * scale), (int)((height / 2) * scale));
 			CollisionRectangleRight = new Rectangle((int)position.X + (width / 2), (int)position.Y + 10, (int)((width / 2) + 30 * scale), (int)((height / 2) * scale));
 			CollisionRectangleUp = new Rectangle((int)position.X, (int)position.Y - 20, (int)(width * scale), (int)((height / 10) * scale));
 			CollisionRectangleDown = new Rectangle((int)position.X + 1, (int)position.Y + (int)(height / 2), (int)(width * scale), (int)(height + 20 * scale));
+
 			currentAnimation.Update(gameTime);
 		}
 		public void Draw(SpriteBatch spriteBatch)

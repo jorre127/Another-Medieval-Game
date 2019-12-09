@@ -34,7 +34,7 @@ namespace _710_InLes.Tutorial
 		  : base(stateChanger, graphicsDevice, content)
 		{
 			scale = 1.6f;
-			movement = new Movement(6);
+			movement = new Movement(6,12,24);
 			aniCreator = new AnimationCreator();
 			levelBinder = new LevelBinder();
 			collidy = new CollisionManager();

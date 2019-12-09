@@ -59,6 +59,8 @@ namespace _710_InLes
 						player.originalPosition = new Vector2((y * 80 * scale) + InitialPosition.X, (x * 64 * scale) + InitialPosition.Y);
 					if (levelToDraw[x, y] == 9)
 						BlokArray[x, y] = new Blok(texture, new Vector2((y * 48 * scale) + InitialPosition.X, (x * 54 * scale) + InitialPosition.Y), 45, 85, scale, Spriteblock.Cliff);
+					if (levelToDraw[x, y] == 10)
+						BlokArray[x, y] = new Blok(texture, new Vector2((y * 55 * scale) + InitialPosition.X, (x * 50 * scale) + InitialPosition.Y), 40, 55, scale, Spriteblock.PlatformSmall);
 				}
 			}
 		}

@@ -21,11 +21,11 @@ namespace _710_InLes
 		private GraphicsDevice graphicsDevice;
 		private ContentManager content;
 		private bool skip = false;
-		
-	
 
 
-		public NextLevel(Player player, Level level, CollisionManager collidy, IStateChanger stateChanger,GraphicsDevice graphicsDevice,ContentManager content)
+
+
+		public NextLevel(Player player, Level level, CollisionManager collidy, IStateChanger stateChanger, GraphicsDevice graphicsDevice, ContentManager content)
 		{
 			this.player = player;
 			this.level = level;
@@ -41,26 +41,32 @@ namespace _710_InLes
 				Tile temptile = (Tile)collidy.ReturnCollision(player, (ICollidable)item);
 				if (temptile != null && temptile.IsPortal)
 				{
-					for (int x = 0; x < 14; x++)
-					{
-						for (int y = 0; y < 15; y++)
-						{
-							level.BlokArray[x, y] = null;
-						}
-					}
-					level.levelbinder.Level++;
-					if (level.levelbinder.Level  >= level.levelbinder.AllLevels.Count)
-					{
-						stateChanger.ChangeState(new EndState(stateChanger, graphicsDevice, content));
-						skip = true;
-					}
-					if (!skip)
-					{
-						level.CreateWorld();
-						player.position = player.originalPosition;
-					}
+					skip = true;
 				}
 			}
+
+			if (skip)
+			{
+				for (int x = 0; x < 14; x++)
+				{
+					for (int y = 0; y < 15; y++)
+					{
+						level.BlokArray[x, y] = null;
+					}
+				}
+
+				level.levelbinder.Level++;
+				if (level.levelbinder.Level >= level.levelbinder.AllLevels.Count)
+				{
+					stateChanger.ChangeState(new EndState(stateChanger, graphicsDevice, content));
+					goto end;
+				}
+				level.CreateWorld();
+				player.position = player.originalPosition;
+				skip = false;
+			}
+
+			end:;
 		}
 	}
 }

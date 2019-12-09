@@ -42,6 +42,10 @@ namespace _710_InLes
 					DrawRectangle = new Rectangle(510,185, width, height);
 					CollisionRectangle = new Rectangle((int)position.X, (int)position.Y - 35, (int)(width * scale), (int)(height * scale));
 					break;
+				case Spriteblock.PlatformSmall:
+					DrawRectangle = new Rectangle(530, 40, width, height);
+					CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, (int)(width * scale), (int)(height * scale));
+					break;
 				default:
 					break;
 			}

@@ -11,18 +11,21 @@ namespace _710_InLes
 	public class Movement
 	{
 
-		private int sprintSpeed = 12;
-		public float jumpheight { get; set; } = 15;
+		private int sprintSpeed;
+		public float jumpheight { get; set; }
 		public bool IsWallSliding { get; set; }
 		public bool IsWallJumping { get; set; }
 		public bool IsJumping { get; set; }
 		public int originalmovementSpeed { get; set; }
-		public float originalJumpheight { get; set; } = 24;
+		public float originalJumpheight { get; set; }
 		public int movementSpeed { get; set; }
-		public Movement(int Movementspeed)
+		public Movement(int Movementspeed, int sprintSpeed, int jumpheight)
 		{
-			originalmovementSpeed = Movementspeed;
-			movementSpeed = originalmovementSpeed;
+			this.originalmovementSpeed = Movementspeed;
+			this.movementSpeed = this.originalmovementSpeed;
+			this.sprintSpeed = sprintSpeed;
+			this.originalJumpheight = jumpheight;
+			this.jumpheight = this.originalJumpheight;
 		}
 
 		public void MoveLeft(ref Vector2 position)
