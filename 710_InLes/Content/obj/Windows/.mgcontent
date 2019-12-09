@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/clouds.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/EndScreenGame.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/Green Portal Sprite Sheet.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/GUI.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/GUI2.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/LightBandit_Spritesheet.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/pngkey.com-lava-png-2333904.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/sea.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/sky.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/tileset.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/tileset2.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/Title.png</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/WalkLeft.jpg</File>
+    <File>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/WalkRight.jpg</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
