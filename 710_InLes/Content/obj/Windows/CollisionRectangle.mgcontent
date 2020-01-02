@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/pngkey.com-lava-png-2333904.png</SourceFile>
-  <SourceTime>2019-11-21T17:16:29.2691181+01:00</SourceTime>
-  <DestFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/bin/Windows/pngkey.com-lava-png-2333904.xnb</DestFile>
-  <DestTime>2019-12-16T10:05:23.7818574+01:00</DestTime>
+  <SourceFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/CollisionRectangle.png</SourceFile>
+  <SourceTime>2019-12-16T10:04:23.3907442+01:00</SourceTime>
+  <DestFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/bin/Windows/CollisionRectangle.xnb</DestFile>
+  <DestTime>2019-12-16T10:05:21.910119+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

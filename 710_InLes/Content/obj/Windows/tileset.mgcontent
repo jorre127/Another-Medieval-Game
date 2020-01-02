@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/tileset.png</SourceFile>
+  <SourceFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/tileset.png</SourceFile>
   <SourceTime>2016-02-02T16:24:06+01:00</SourceTime>
-  <DestFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Spelleke - Copy/710_InLes/710_InLes/Content/bin/Windows/tileset.xnb</DestFile>
-  <DestTime>2019-12-02T13:07:54.0662629+01:00</DestTime>
+  <DestFile>C:/Users/ploch/OneDrive/Bureaublad/School/Jaar_2/Semester_1/Game Development/Another Medieval Game/Another-Medieval-Name/Another-Medieval-Game/710_InLes/Content/bin/Windows/tileset.xnb</DestFile>
+  <DestTime>2019-12-16T10:05:23.951319+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

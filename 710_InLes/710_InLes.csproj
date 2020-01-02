@@ -46,6 +46,7 @@
     <Compile Include="Animation\AnimationFrame.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="BatchUpdater.cs" />
+    <Compile Include="CollisonRectangleDrawer.cs" />
     <Compile Include="GameStates\EndState.cs" />
     <Compile Include="Interfaces\IStateChanger.cs" />
     <Compile Include="LevelStuff\Blok.cs" />
