@@ -9,7 +9,7 @@ namespace _710_InLes
 {
     public class Animation
     {
-        private List<AnimationFrame> frames;
+        public List<AnimationFrame> frames { get; set; }
         public AnimationFrame currentFrame;
         private double xOffset;
         int counter = 0;

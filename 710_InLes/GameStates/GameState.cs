@@ -25,6 +25,7 @@ namespace _710_InLes.Tutorial
 		private AnimationCreator aniCreator;
 		private Movement movement;
 		private Remote remote;
+		private HUD hud;
 		private float scale;
 
 		private GameOver gameOver;
@@ -34,7 +35,7 @@ namespace _710_InLes.Tutorial
 		  : base(stateChanger, graphicsDevice, content)
 		{
 			scale = 1.6f;
-			movement = new Movement(6);
+			movement = new Movement(6,12,24);
 			aniCreator = new AnimationCreator();
 			levelBinder = new LevelBinder();
 			collidy = new CollisionManager();
@@ -44,6 +45,8 @@ namespace _710_InLes.Tutorial
 			Texture2D tileset = content.Load<Texture2D>("tileset");
 			Texture2D LavaTexture = content.Load<Texture2D>("pngkey.com-lava-png-2333904");
 			Texture2D portalTexture = content.Load<Texture2D>("Green Portal Sprite Sheet");
+			Texture2D HeartTexture = content.Load<Texture2D>("heart-sprite-png-2");
+			Texture2D NumbersTexture = content.Load<Texture2D>("aGOgp");
 
 			remote = new KeyBoard();
 			((KeyBoard)remote).downk = Keys.Down;
@@ -52,15 +55,16 @@ namespace _710_InLes.Tutorial
 			((KeyBoard)remote).rightk = Keys.D;
 			((KeyBoard)remote).sprintk = Keys.LeftShift;
 
-			player = new Player(new Vector2(100, 800), 60, 52, scale, texture, remote, movement,aniCreator);
+			gravity = new Gravity(4,0.3f,0.7f);
+			player = new Player(new Vector2(100, 800), 60, 52, scale, texture, remote, movement, aniCreator, gravity);
 			lava = new LavaSheet(LavaTexture, new Vector2(-10, 1100), scale);
 			currentLevel = new Level(player, tileset, portalTexture, new Vector2(-10, -40), levelBinder, lava, scale);
 			levelcollidy = new LevelCollision(player, currentLevel, collidy);
-			gravity = new Gravity(player, currentLevel, 4, collidy);
-			gameOver = new GameOver(player, lava, collidy);
-			nextLevel = new NextLevel(player, currentLevel, collidy,stateChanger,graphicsDevice,content);
+			gameOver = new GameOver(player, lava, collidy,currentLevel);
+			nextLevel = new NextLevel(player, currentLevel, collidy,stateChanger,graphicsDevice,content,lava);
+			hud = new HUD(HeartTexture,NumbersTexture,aniCreator,player);
 
-			batchUpdater = new BatchUpdater(gravity, player, levelcollidy, currentLevel, gameOver, nextLevel);
+			batchUpdater = new BatchUpdater(gravity, player, levelcollidy, currentLevel, gameOver, nextLevel,hud);
 		}
 
 		public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -68,6 +72,7 @@ namespace _710_InLes.Tutorial
 			spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullNone);
 			player.Draw(spriteBatch);
 			currentLevel.DrawLevel(spriteBatch);
+			hud.Draw(spriteBatch);
 			spriteBatch.End();
 		}
 

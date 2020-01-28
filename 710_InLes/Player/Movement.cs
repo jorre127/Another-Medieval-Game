@@ -11,18 +11,21 @@ namespace _710_InLes
 	public class Movement
 	{
 
-		private int sprintSpeed = 12;
-		public float jumpheight { get; set; } = 15;
-		public bool IsDoubleJump { get; set; } = false;
+		private int sprintSpeed;
+		public float jumpheight { get; set; }
 		public bool IsWallSliding { get; set; }
+		public bool IsWallJumping { get; set; }
 		public bool IsJumping { get; set; }
 		public int originalmovementSpeed { get; set; }
-		public float originalJumpheight { get; set; } = 24;
+		public float originalJumpheight { get; set; }
 		public int movementSpeed { get; set; }
-		public Movement(int Movementspeed)
+		public Movement(int Movementspeed, int sprintSpeed, int jumpheight)
 		{
-			originalmovementSpeed = Movementspeed;
-			movementSpeed = originalmovementSpeed;
+			this.originalmovementSpeed = Movementspeed;
+			this.movementSpeed = this.originalmovementSpeed;
+			this.sprintSpeed = sprintSpeed;
+			this.originalJumpheight = jumpheight;
+			this.jumpheight = this.originalJumpheight;
 		}
 
 		public void MoveLeft(ref Vector2 position)
@@ -43,24 +46,25 @@ namespace _710_InLes
 		}
 		public void Jump(ref Vector2 position)
 		{
-			IsJumping = true;
 			position.Y -= jumpheight;
-			movementSpeed = 11;
-
 		}
-		public void WallJump(bool left, bool right, bool jump, ref Vector2 position)
+		public void WallJump(ref Vector2 position)
 		{
-			if (!IsDoubleJump)
+			Jump(ref position);
+			movementSpeed = 12;
+			IsWallJumping = true;
+		}
+		public void WallSliding(Player player, Gravity gravity)
+		{
+			if (((player.collideLeft && player.remote.left) || (player.remote.right && player.collideRight)) && !player.collideDown && !IsWallJumping)
 			{
-				jumpheight = 20;
-				Jump(ref position);
-				IsDoubleJump = true;
-				movementSpeed = 12;
+				gravity.gravityStrength = 2.5f;
+				player.movement.jumpheight = 0;
 			}
-		}
-		public void Dash()
-		{
-
+			else
+			{
+				IsWallJumping = false;
+			}
 		}
 	}
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	interface ICollidable
+	public interface ICollidable
 	{
 		Rectangle CollisionRectangle { get; set; }
 	}

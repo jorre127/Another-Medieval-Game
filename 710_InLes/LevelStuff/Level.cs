@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	class Level
+	public class Level
 	{
 		private Texture2D texture, portalTexture;
 		private Vector2 InitialPosition;

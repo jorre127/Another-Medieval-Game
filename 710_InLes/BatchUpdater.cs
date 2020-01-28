@@ -15,7 +15,8 @@ namespace _710_InLes
 		private Level currentLevel;
 		private GameOver gameOver;
 		private NextLevel nextLevel;
-		public BatchUpdater(Gravity gravity, Player player,LevelCollision levelcollidy,Level currentLevel,GameOver gameOver,NextLevel nextLevel)
+		private HUD hud;
+		public BatchUpdater(Gravity gravity, Player player,LevelCollision levelcollidy,Level currentLevel,GameOver gameOver,NextLevel nextLevel, HUD hud)
 		{
 			this.gravity = gravity;
 			this.player = player;
@@ -23,15 +24,17 @@ namespace _710_InLes
 			this.currentLevel = currentLevel;
 			this.gameOver = gameOver;
 			this.nextLevel = nextLevel;
+			this.hud = hud;
 		}
 		public void Update(GameTime gameTime)
 		{
 			nextLevel.nextLevelUpdate();
-			gravity.Update();
+			gravity.Update(player);
 			player.Update(gameTime);
 			levelcollidy.Update();
 			currentLevel.Update(gameTime);
-			gameOver.GameoverUpdate();
+			gameOver.GameoverUpdate(gameTime);
+			hud.Update(gameTime);
 		}
 	}
 }

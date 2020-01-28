@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _710_InLes
 {
-	class Lava : Tile, IAnimatedTile, ICollidable
+	public class Lava : Tile, IAnimatedTile, ICollidable
 	{
 		public Animation animation { get; set; }
 		public Rectangle CollisionRectangle{get; set;}
