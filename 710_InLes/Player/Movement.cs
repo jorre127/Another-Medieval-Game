@@ -51,6 +51,7 @@ namespace _710_InLes
 		public void WallJump(ref Vector2 position)
 		{
 			Jump(ref position);
+			movementSpeed = 12;
 			IsWallJumping = true;
 		}
 		public void WallSliding(Player player, Gravity gravity)

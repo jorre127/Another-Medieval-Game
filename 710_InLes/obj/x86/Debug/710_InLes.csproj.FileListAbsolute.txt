@@ -135,3 +135,6 @@ C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Ano
 C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\obj\x86\Debug\710_InLes.csproj.CopyComplete
 C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\obj\x86\Debug\710_InLes.exe
 C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\obj\x86\Debug\710_InLes.pdb
+C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\bin\Windows\x86\Debug\Content\CollisionRectangle.xnb
+C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\bin\Windows\x86\Debug\Content\heart-sprite-png-2.xnb
+C:\Users\ploch\OneDrive\Bureaublad\School\Jaar_2\Semester_1\Game Development\Another Medieval Game\Another-Medieval-Name\Another-Medieval-Game\710_InLes\bin\Windows\x86\Debug\Content\aGOgp.xnb

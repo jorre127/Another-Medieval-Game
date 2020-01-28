@@ -18,7 +18,7 @@ namespace _710_InLes
 		public Portal(Texture2D texture, Vector2 position, int width, int height, float scale) :base (texture,position,width,height,scale)
 		{
 			this.IsPortal = true;
-			this.CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, width, height);
+			this.CollisionRectangle = new Rectangle((int)position.X-10, (int)position.Y, width+10, height);
 			this.aniCreator = new AnimationCreator();
 			CreateAnimation();
 		}

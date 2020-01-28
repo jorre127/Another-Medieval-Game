@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace _710_InLes
 {
-	enum Spriteblock { Grass1,WallLeft,WallRight,Platform,PlatformSmall,Cliff,Finish};
+	enum Spriteblock { Grass1,WallLeft,WallRight,Platform,Cliff,Finish};
     public class Game1 : Game ,IStateChanger
     {
         private GraphicsDeviceManager graphics;

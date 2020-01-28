@@ -16,6 +16,7 @@ namespace _710_InLes
 		private Player player;
 		private Level level;
 		private CollisionManager collidy;
+		private LavaSheet lava;
 
 		private IStateChanger stateChanger;
 		private GraphicsDevice graphicsDevice;
@@ -25,7 +26,7 @@ namespace _710_InLes
 
 
 
-		public NextLevel(Player player, Level level, CollisionManager collidy, IStateChanger stateChanger, GraphicsDevice graphicsDevice, ContentManager content)
+		public NextLevel(Player player, Level level, CollisionManager collidy, IStateChanger stateChanger, GraphicsDevice graphicsDevice, ContentManager content, LavaSheet lava)
 		{
 			this.player = player;
 			this.level = level;
@@ -33,6 +34,7 @@ namespace _710_InLes
 			this.stateChanger = stateChanger;
 			this.graphicsDevice = graphicsDevice;
 			this.content = content;
+			this.lava = lava;
 		}
 		public void nextLevelUpdate()
 		{
@@ -61,7 +63,9 @@ namespace _710_InLes
 					stateChanger.ChangeState(new EndState(stateChanger, graphicsDevice, content));
 					goto end;
 				}
+				
 				level.CreateWorld();
+				lava.CreateWorld();
 				player.position = player.originalPosition;
 				skip = false;
 			}

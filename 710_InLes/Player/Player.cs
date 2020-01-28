@@ -13,6 +13,7 @@ namespace _710_InLes
 		private AnimationCreator aniCreator;
 		private Gravity gravity;
 
+		public int lives { get; set; }
 		public bool collideRight, collideLeft, collideUp, collideDown;
 		private Texture2D texture, currentTexture;
 		public Vector2 position, originalPosition;
@@ -35,6 +36,7 @@ namespace _710_InLes
 			this.scale = scale;
 			this.aniCreator = aniCreator;
 			this.gravity = gravity;
+			this.lives = 3;
 			CreateAnimationLeftRight();
 			Init(_position, keyBoard);
 		}
@@ -134,6 +136,10 @@ namespace _710_InLes
 			if (!collideDown)
 			{
 				WallSlide();
+			}
+			else
+			{
+				movement.movementSpeed = movement.originalmovementSpeed;
 			}
 		}
 		public void Update(GameTime gameTime)
